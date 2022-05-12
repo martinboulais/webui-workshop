@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Project template for WebUI-Workshop 2020-2022",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon --watch index.js --watch lib --watch config.js index.js",
+    "test": "mocha --exit test/**/mocha-*",
+    "coverage": "nyc npm run test"
   },
   "repository": {
     "type": "git",
@@ -14,6 +17,12 @@
   "dependencies": {
     "@aliceo2/web-ui": "1.23.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^10.0.0",
+    "nodemon": "^2.0.16",
+    "nyc": "^15.1.0",
+    "puppeteer": "^14.0.0",
+    "sinon": "^14.0.0"
+  },
   "main": "index.js"
 }
